@@ -10,7 +10,7 @@ const fs = require("fs")
 articleController.insertArticle = async ({ fields, files, }) => {
     try {
         let article = fields
-        let file = files.image
+        let file = files.img
 
         // create directories if doesn't exist
 
@@ -45,7 +45,7 @@ articleController.editArticle = async ({ fields, files, id, }) => {
     try {
 
         let article = fields
-        let file = files.image
+        let file = files.img
 
         // create directories if doesn't exist
         let newFile = false

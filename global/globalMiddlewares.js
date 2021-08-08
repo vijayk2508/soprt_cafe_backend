@@ -15,7 +15,17 @@ const globalMiddlewares = (app, server) => {
     app.use(middlewares.formidable, bodyParser.json(), bodyParser.urlencoded({ extended: true }));
     app.use("/static", static(path.join(__dirname, "..", "public")));
     app.use("/article", routes.article);
+
+    app.use(cors()); // core 
+
+    // error handler, if no route has been caught
+    app.get("/*", (req, res) => { res.send("404 not found"); res.end(); });
+    app.post("/*", (req, res) => { res.send("404 not found"); res.end(); });
+    app.delete("/*", (req, res) => { res.send("404 not found"); res.end(); });
+    app.put("/*", (req, res) => { res.send("404 not found"); res.end(); });
     app.use(middlewares.auth); // middleware to validate authenticated users
+
+
 
 
 };

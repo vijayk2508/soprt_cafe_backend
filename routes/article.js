@@ -28,7 +28,7 @@ articleRouter.post("/insertArticle", celebrate({
     })
     ,
     files: Joi.object().keys({
-      image: Joi.object().required()
+      img: Joi.object().required()
     })
   })
 }), errors(), (request, response) => {
@@ -51,7 +51,7 @@ articleRouter.put("/editArticle/:id", celebrate({
     })
     ,
     files: Joi.object().keys({
-      image: Joi.object()
+      img: Joi.object()
     })
   })
 }), errors(), (request, response) => {
